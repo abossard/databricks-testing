@@ -17,7 +17,7 @@ if __name__ == "__main__":
     #sc = spark.sparkContext
     
     sc = SparkContext(master='local[2]', appName=__name__)
-     
+    
     jobinput = [dict(name="job_" + str(y))  for y in range(10)]
     ji_df = sc.parallelize(jobinput, 10)
     result = ji_df.map(do_work).collect()
