@@ -13,10 +13,10 @@ def do_work(item):
   return result
 
 if __name__ == "__main__":
-    #spark = SparkSession.builder.getOrCreate()
-    #sc = spark.sparkContext
+    spark = SparkSession.builder.getOrCreate()
+    sc = spark.sparkContext
     
-    sc = SparkContext(master='local[2]', appName=__name__)
+    #sc = SparkContext(master='local[2]', appName=__name__)
     
     jobinput = [dict(name="job_" + str(y))  for y in range(10)]
     ji_df = sc.parallelize(jobinput, 10)
