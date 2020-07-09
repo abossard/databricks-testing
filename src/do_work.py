@@ -6,7 +6,7 @@ from pyspark import SparkContext
 
 def do_work(item):
   print("Work for Job: " + str(item))
-  delay = random.randint(1,2)
+  delay = random.randint(1,20)
   time.sleep(delay)
   result = dict(**item)
   result.update(delay=delay)
